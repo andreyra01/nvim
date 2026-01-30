@@ -1,0 +1,18 @@
+if vim.g.vscode then
+    require("options_vscode")
+else
+    require("plugins")
+    require("plugins.treesitter")
+    require("plugins.lsp")
+    require("plugins.cmp")
+    require("plugins.tree")
+    require("plugins.go")
+    require("plugins.bufferline")
+    require("plugins.lualine")
+    require("plugins.leetcode")
+    require("plugins.colorscheme")
+    require("plugins.dap")
+    require("plugins.telescope")
+    require("plugins.http")
+    require("options")
+end
