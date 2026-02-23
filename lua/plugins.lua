@@ -67,26 +67,8 @@ require("lazy").setup({
             ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
         },
         {
-            'akinsho/bufferline.nvim',
-            version = "*",
-            dependencies = 'nvim-tree/nvim-web-devicons'
-        },
-        {
             'nvim-lualine/lualine.nvim',
             dependencies = { 'nvim-tree/nvim-web-devicons' }
-        },
-        {
-            "kawre/leetcode.nvim",
-            build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
-            dependencies = {
-                "nvim-telescope/telescope.nvim",
-                -- "ibhagwan/fzf-lua",
-                "nvim-lua/plenary.nvim",
-                "MunifTanjim/nui.nvim",
-            },
-            opts = {
-                -- configuration goes here
-            },
         },
         {
             "folke/which-key.nvim",
@@ -122,26 +104,6 @@ require("lazy").setup({
                 "leoluz/nvim-dap-go",
                 "nvim-neotest/nvim-nio"
             },
-        },
-        {
-            "kdheepak/lazygit.nvim",
-            lazy = true,
-            cmd = {
-                "LazyGit",
-                "LazyGitConfig",
-                "LazyGitCurrentFile",
-                "LazyGitFilter",
-                "LazyGitFilterCurrentFile",
-            },
-            -- optional for floating window border decoration
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-            },
-            -- setting the keybinding for LazyGit with 'keys' is recommended in
-            -- order to load the plugin when the command is run for the first time
-            keys = {
-                --{ "<leader>gt", "<cmd>LazyGit<cr>", desc = "[G]it [T]oggle" }
-            }
         },
         {
             'lewis6991/gitsigns.nvim',
@@ -208,33 +170,6 @@ require("lazy").setup({
         },
         {
             "ruifm/gitlinker.nvim",
-        },
-        {
-            "pmizio/typescript-tools.nvim",
-            dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-            opts = {},
-        },
-        {
-            'everviolet/nvim',
-            name = 'evergarden',
-            priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
-            opts = {
-                theme = {
-                    variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
-                    accent = 'green',
-                },
-                editor = {
-                    transparent_background = false,
-                    sign = { color = 'none' },
-                    float = {
-                        color = 'mantle',
-                        solid_border = false,
-                    },
-                    completion = {
-                        color = 'surface0',
-                    },
-                },
-            }
         },
         { "EdenEast/nightfox.nvim" },
         {
