@@ -168,9 +168,6 @@ require("lazy").setup({
                 kulala_keymaps_prefix = "",
             },
         },
-        {
-            "ruifm/gitlinker.nvim",
-        },
         { "EdenEast/nightfox.nvim" },
         {
             "folke/flash.nvim",
@@ -184,7 +181,38 @@ require("lazy").setup({
                 { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
             },
         },
-        { "catppuccin/nvim",       name = "catppuccin", priority = 1000 }
+        { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+        {'akinsho/git-conflict.nvim', version = "*", config = true},
+        {
+          "cajames/copy-reference.nvim",
+          opts = {}, -- optional configuration
+          keys = {
+            { "yr", "<cmd>CopyReference file<cr>", mode = { "n", "v" }, desc = "Copy file path" },
+            { "yrr", "<cmd>CopyReference line<cr>", mode = { "n", "v" }, desc = "Copy file:line reference" },
+          },
+        },
+        {
+          "NeogitOrg/neogit",
+          lazy = true,
+          dependencies = {
+            -- Only one of these is needed.
+            "sindrets/diffview.nvim",        -- optional
+            "esmuellert/codediff.nvim",      -- optional
+
+            -- For a custom log pager
+            "m00qek/baleia.nvim",            -- optional
+
+            -- Only one of these is needed.
+            "nvim-telescope/telescope.nvim", -- optional
+            "ibhagwan/fzf-lua",              -- optional
+            "nvim-mini/mini.pick",           -- optional
+            "folke/snacks.nvim",             -- optional
+          },
+          cmd = "Neogit",
+          keys = {
+            { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+          }
+        }
     },
     -- automatically check for plugin updates
     checker = { enabled = true },
