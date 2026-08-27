@@ -182,37 +182,46 @@ require("lazy").setup({
             },
         },
         { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
-        {'akinsho/git-conflict.nvim', version = "*", config = true},
+        { 'akinsho/git-conflict.nvim', version = "*", config = true },
         {
-          "cajames/copy-reference.nvim",
-          opts = {}, -- optional configuration
-          keys = {
-            { "yr", "<cmd>CopyReference file<cr>", mode = { "n", "v" }, desc = "Copy file path" },
-            { "yrr", "<cmd>CopyReference line<cr>", mode = { "n", "v" }, desc = "Copy file:line reference" },
-          },
+            "cajames/copy-reference.nvim",
+            opts = {}, -- optional configuration
+            keys = {
+                { "yr",  "<cmd>CopyReference file<cr>", mode = { "n", "v" }, desc = "Copy file path" },
+                { "yrr", "<cmd>CopyReference line<cr>", mode = { "n", "v" }, desc = "Copy file:line reference" },
+            },
         },
         {
-          "NeogitOrg/neogit",
-          lazy = true,
-          dependencies = {
-            -- Only one of these is needed.
-            "sindrets/diffview.nvim",        -- optional
-            "esmuellert/codediff.nvim",      -- optional
+            "NeogitOrg/neogit",
+            lazy = true,
+            dependencies = {
+                -- Only one of these is needed.
+                "sindrets/diffview.nvim", -- optional
+                "esmuellert/codediff.nvim", -- optional
 
-            -- For a custom log pager
-            "m00qek/baleia.nvim",            -- optional
+                -- For a custom log pager
+                "m00qek/baleia.nvim", -- optional
 
-            -- Only one of these is needed.
-            "nvim-telescope/telescope.nvim", -- optional
-            "ibhagwan/fzf-lua",              -- optional
-            "nvim-mini/mini.pick",           -- optional
-            "folke/snacks.nvim",             -- optional
-          },
-          cmd = "Neogit",
-          keys = {
-            { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
-          }
-        }
+                -- Only one of these is needed.
+                "nvim-telescope/telescope.nvim", -- optional
+                "ibhagwan/fzf-lua",              -- optional
+                "nvim-mini/mini.pick",           -- optional
+                "folke/snacks.nvim",             -- optional
+            },
+            cmd = "Neogit",
+            keys = {
+                { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+            }
+        },
+        {
+            'mrcjkb/rustaceanvim',
+            -- To avoid being surprised by breaking changes,
+            -- I recommend you set a version range
+            version = '^9',
+            -- This plugin implements proper lazy-loading (see :h lua-plugin-lazy).
+            -- No need for lazy.nvim to lazy-load it.
+            lazy = false,
+        },
     },
     -- automatically check for plugin updates
     checker = { enabled = true },
